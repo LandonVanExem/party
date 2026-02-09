@@ -10,11 +10,42 @@
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
     />
-    <title>home</title>
+    <title>Let's party!</title>
 </head>
 <body class="m-2">
 <main class="container">
+    <nav
+        class="navbar navbar-expand-lg"
+        style="background-color: green"
+        data-bs-theme="dark"
+>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Let's Party</a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="about">about</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <h1>hello</h1>
+
     <p th:text="${myCalculatedValue}">myCalculatedValue</p>
 </main>
 <script
