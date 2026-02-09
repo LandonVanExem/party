@@ -2,3 +2,12 @@ body{
     background-color: #232a3a;
     color: white;
 }
+
+ol{
+    background-color: aqua;
+    color: black;
+
+}
+li p {
+    margin: 0;
+}

@@ -46,13 +46,12 @@
     </div>
 </nav>
     <h1>about</h1>
-
     <ol>
         <li><p th:text="${myName}">myName</p></li>
         <li><p th:text="${myStreet}">myStreet</p></li>
         <li><p th:text="${myCity}">myCity</p></li>
     </ol>
-
+    <p th:text="|Ik ben ${myName} en woon in ${myStreet}, te ${myCity}|">app</p>
 </main>
 <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
