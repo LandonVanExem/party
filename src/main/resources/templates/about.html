@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>about</title>
 </head>
 <body>
-<h1>about</h1>
-<p>to the right</p>
+<main class="container">
+    <h1>about</h1>
+    <ol>
+        <li><p th:text="${myName}">myName</p></li>
+        <li><p th:text="${myStreet}">myStreet</p></li>
+        <li><p th:text="${myCity}">myCity</p></li>
+    </ol>
+
+</main>
+
 </body>
 </html>
