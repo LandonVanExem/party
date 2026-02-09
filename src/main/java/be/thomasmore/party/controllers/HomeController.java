@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @Controller
 public class HomeController {
 
@@ -26,4 +29,14 @@ public class HomeController {
         return "about";
     }
 
+    @GetMapping("/pay")
+    public String pay(Model model){
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = myDateObj.format(myFormatObj);
+        model.addAttribute("currentDate", formattedDate);
+        String formattedDate2 = myDateObj.plusDays(30).format(myFormatObj);
+        model.addAttribute("payDate", formattedDate2);
+        return "pay";
+    }
   }
