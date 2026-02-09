@@ -11,3 +11,7 @@ ol{
 li p {
     margin: 0;
 }
+footer{
+    border-top:0.01rem;
+    border-color: gray;
+}
