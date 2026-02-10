@@ -39,6 +39,9 @@
                         <a class="nav-link active" aria-current="page" th:href="home">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" th:href="venuedetails">zaaldetails</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" th:href="about">about</a>
                     </li>
                 </ul>
@@ -46,6 +49,7 @@
         </div>
     </nav>
     <h2  class="text-center display-1 mb-5" th:text="*{venueName}"></h2>
+    <p>zie <a th:href="*{getLinkMoreInfo()}" th:text="*{getLinkMoreInfo()}">getLinkMoreInfo</a></p>
 
 </main>
 <footer class="position-absolute top-100 start-50 translate-middle">©thomasMore</footer>

@@ -12,7 +12,7 @@ public class VenueController {
     public String Venue(Model model){
         Venue venue1= new Venue();
         venue1.setVenueName("the Club");
-        venue1.setLinkMoreInfo("local bar");
+        venue1.setLinkMoreInfo("https://theclubmechelen.be/");
         model.addAttribute("venue1",venue1);
         return "venuedetails";
     }
