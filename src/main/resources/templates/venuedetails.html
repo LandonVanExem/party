@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -48,8 +48,71 @@
             </div>
         </div>
     </nav>
-    <h2  class="text-center display-1 mb-5" th:text="*{venueName}"></h2>
+    <h2 class="text-center display-1 mb-5" th:text="*{venueName}"></h2>
+    <h2 class="text-center" th:text="*{city}"></h2>
     <p>zie <a th:href="*{getLinkMoreInfo()}" th:text="*{getLinkMoreInfo()}">getLinkMoreInfo</a></p>
+    <div class="card text-bg-light mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="../static/img/venue_club.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="card-title">Faciliteiten:</h2>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text" th:text="|max *{capacity} personen|">capacity</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text"
+                                       th:text="|*{distanceFromPublicTransportInKm}km van openbaar vervoer|">
+                                        distanceFromPublicTransportInKm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text" th:if="*{foodProvided}">eten voorzien: ja</p>
+                                    <p class="card-text" th:unless="*{foodProvided}">eten voorzien: nee</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text" th:if="*{indoor}">binnen: ja</p>
+                                    <p class="card-text" th:unless="*{indoor}">binnen: nee</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text" th:if="*{outdoor}">buiten: ja</p>
+                                    <p class="card-text" th:unless="*{outdoor}">buiten: nee</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text" th:if="*{indoor}">gratis parking: ja</p>
+                                    <p class="card-text" th:unless="*{indoor}">gratis parking: nee</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </main>
 <footer class="position-absolute top-100 start-50 translate-middle">©thomasMore</footer>
