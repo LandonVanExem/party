@@ -10,8 +10,8 @@ import java.time.format.DateTimeFormatter;
 @Controller
 public class HomeController {
 
-    @GetMapping({"/","/home"})
-    public String home(Model model){
+    @GetMapping({"/", "/home"})
+    public String home(Model model) {
         int myCalculatedValue = 34 * 62;
         model.addAttribute("myCalculatedValue", myCalculatedValue);
         return "home";
@@ -19,9 +19,9 @@ public class HomeController {
 
 
     @GetMapping("/about")
-    public String about(Model model){
+    public String about(Model model) {
         String myName = "Landon Van Exem";
-        String myStreet ="Reeweide 6";
+        String myStreet = "Reeweide 6";
         String myCity = "Schilde";
         model.addAttribute("myName", myName);
         model.addAttribute("myStreet", myStreet);
@@ -30,7 +30,7 @@ public class HomeController {
     }
 
     @GetMapping("/pay")
-    public String pay(Model model){
+    public String pay(Model model) {
         LocalDateTime myDateObj = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String formattedDate = myDateObj.format(myFormatObj);
@@ -39,4 +39,4 @@ public class HomeController {
         model.addAttribute("payDate", formattedDate2);
         return "pay";
     }
-  }
+}

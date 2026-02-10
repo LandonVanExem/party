@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class VenueController {
 
     @GetMapping("/venuedetails")
-    public String Venue(Model model){
-        Venue venue1= new Venue();
+    public String Venue(Model model) {
+        Venue venue1 = new Venue();
         venue1.setVenueName("the Club");
         venue1.setLinkMoreInfo("https://theclubmechelen.be/");
-        model.addAttribute("venue1",venue1);
+        model.addAttribute("venue1", venue1);
         return "venuedetails";
     }
 }
