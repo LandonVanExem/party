@@ -19,12 +19,8 @@ public class ClientController {
         this.clientRepository = clientRepository;
     }
 
-    @GetMapping("/clientgreeting")
-    public String clientGreeting(Model model){
-        Optional<Client> clientFromDb = clientRepository.findById(1);
-        if (clientFromDb.isPresent()){
-            model.addAttribute("client",clientFromDb.get());
-        }
+    public String helper(int id){
+        Optional<Client> clientFromDb = clientRepository.findById(id);
         LocalDateTime myDateObj = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HH");
         String formattedDate = myDateObj.format(myFormatObj);
@@ -55,6 +51,12 @@ public class ClientController {
         if (orders>=80){
             text+=", jij bent een topper!";
         }
+        return text;
+    }
+
+    @GetMapping("/clientgreeting")
+    public String clientGreeting(Model model){
+        String text= helper(1);
         model.addAttribute("text", text);
         return "clientgreeting";
     }
